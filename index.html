@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Break & Barber - Tu espacio, tu corte, tu momento</title>
+    <meta name="description"
+        content="Break & Barber: Barbería premium. Reserva tu cita online. Cortes de pelo, afeitados y tratamientos exclusivos." />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <h1>Break & Barber</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#booking" class="btn-primary cta-header">RESERVA TU HORA AHORA</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container hero-content">
+                <h2>Tu espacio, tu corte, tu momento.</h2>
+                <p>¡Pasa y ponte cómodo! Olvídate de la prisa. Bienvenido a Break & Barber.</p>
+                <a href="#booking" class="btn-primary">RESERVA TU HORA AHORA</a>
+            </div>
+        </section>
+
+        <!-- Booking Section (P1) -->
+        <section id="booking">
+            <div class="container">
+                <h2>Reserva tu Cita</h2>
+                <div class="booking-container">
+                    <!-- Progress Indicators (P1-103) -->
+                    <div class="progress-bar">
+                        <div class="step active" data-step="1">1. Servicio</div>
+                        <div class="step" data-step="2">2. Fecha y Hora</div>
+                        <div class="step" data-step="3">3. Datos</div>
+                    </div>
+
+                    <!-- Minimal Form (P1-102) -->
+                    <form id="booking-form">
+                        <!-- Step 1: Service Selection -->
+                        <div class="form-step active" id="step-1">
+                            <h3>Elige tu servicio</h3>
+                            <div class="service-options">
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="corte" required>
+                                    <span class="service-name">Corte de Cabello</span>
+                                    <span class="service-price">20€</span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="barba">
+                                    <span class="service-name">Arreglo de Barba</span>
+                                    <span class="service-price">15€</span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="completo">
+                                    <span class="service-name">Servicio Completo</span>
+                                    <span class="service-price">30€</span>
+                                </label>
+                            </div>
+                            <button type="button" class="btn-next" onclick="nextStep(2)">Siguiente</button>
+                        </div>
+
+                        <!-- Step 2: Date & Time -->
+                        <div class="form-step" id="step-2">
+                            <h3>Elige fecha y hora</h3>
+                            <input type="date" name="date" required>
+                            <select name="time" required>
+                                <option value="">Selecciona una hora</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                            </select>
+                            <div class="btn-group">
+                                <button type="button" class="btn-prev" onclick="prevStep(1)">Atrás</button>
+                                <button type="button" class="btn-next" onclick="nextStep(3)">Siguiente</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Personal Details -->
+                        <div class="form-step" id="step-3">
+                            <h3>Tus datos</h3>
+                            <input type="text" name="name" placeholder="Nombre completo" required>
+                            <input type="tel" name="phone" placeholder="Teléfono (WhatsApp)" required>
+                            <input type="email" name="email" placeholder="Correo electrónico" required>
+                            <p class="note"><small>Te enviaremos un recordatorio por WhatsApp.</small></p>
+                            <div class="btn-group">
+                                <button type="button" class="btn-prev" onclick="prevStep(2)">Atrás</button>
+                                <button type="submit" class="btn-submit">Confirmar Reserva</button>
+                            </div>
+                            <a href="#" class="btn-primary">COMPRAR BONOS DE SERVICIO</a>
+                        </div>
+        </section>
+
+        <!-- FAQ (P3-305) -->
+        <section id="faq">
+            <div class="container">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-item">
+                    <h3>¿Necesito reservar con antelación?</h3>
+                    <p>Recomendamos reservar para asegurar tu hora, pero también atendemos sin cita si hay
+                        disponibilidad.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Qué métodos de pago aceptan?</h3>
+                    <p>Aceptamos efectivo, tarjetas y pagos móviles.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cuál es la política de cancelación?</h3>
+                    <p>Por favor, avísanos con al menos 24 horas de antelación si necesitas cancelar o reprogramar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Footer (P4) -->
+        <footer id="contact">
+            <div class="container footer-content">
+                <div class="contact-info">
+                    <h3>Encuéntranos</h3>
+                    <p>Calle Falsa 123, Ciudad</p>
+                    <p>Tel: +34 600 000 000</p>
+                    <p>Email: hola@breakandbarber.com</p>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                    </div>
+                    <!-- Trust Badges (P3-303) -->
+                    <div class="trust-badges" style="margin-top: 20px;">
+                        <small>Pagos Seguros | SSL Encrypted</small>
+                    </div>
+                </div>
+                <div class="hours">
+                    <h3>Horario</h3>
+                    <p>Lunes - Viernes: 10:00 - 20:00</p>
+                    <p>Sábado: 10:00 - 14:00</p>
+                </div>
+                <div class="map">
+                    <!-- Placeholder for Map -->
+                    <div class="map-placeholder">Mapa Interactivo</div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
